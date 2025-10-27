@@ -1,0 +1,223 @@
+:root {
+  --bg: #f4f4f7;
+  --text: #1a1a1a;
+  --accent: #0d1b2a;
+  --highlight: #3d5a80;
+  --light-accent: #98c1d9;
+  --card-bg: #ffffff;
+  --shadow: rgba(0,0,0,0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* --- Header och meny --- */
+
+header {
+  background: var(--accent);
+  color: white;
+  text-align: center;
+  padding: 1.2rem 1rem;
+  box-shadow: 0 2px 8px var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s;
+}
+
+nav a:hover {
+  background: var(--highlight);
+  color: white;
+}
+
+/* --- Hero-sektion --- */
+
+.hero {
+  background: url('https://picsum.photos/id/1015/1600/500') no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 6rem 1rem 4rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  max-width: 700px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+/* --- Main content --- */
+
+main {
+  flex: 1;
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* --- Bokgrid med hover-overlay --- */
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.book {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.book:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px var(--shadow);
+}
+
+.book img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+.book-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  color: white;
+  padding: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.book:hover .book-overlay {
+  opacity: 1;
+}
+
+.book-overlay h3 {
+  margin-bottom: 0.3rem;
+  font-size: 1.2rem;
+}
+
+.book-overlay p {
+  font-size: 0.9rem;
+  color: #ddd;
+}
+
+/* --- Bokdetaljer och content-sidor --- */
+
+.book-detail, .content-page {
+  background: var(--card-bg);
+  padding: 2.5rem;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px var(--shadow);
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.book-detail img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 4px 16px var(--shadow);
+}
+
+.book-detail h1, .content-page h1 {
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+.book-detail .author {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+a.buy {
+  display: inline-block;
+  background: var(--highlight);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 1rem;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+a.buy:hover {
+  background: var(--light-accent);
+  color: var(--accent);
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 2rem;
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.back-link:hover {
+  color: var(--highlight);
+}
+
+/* --- Footer --- */
+
+footer {
+  background: var(--accent);
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.95rem;
+  margin-top: 3rem;
+}

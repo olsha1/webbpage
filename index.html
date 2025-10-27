@@ -3,15 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Min första webbsida</title>
-  <style>
-    body { font-family: Arial, sans-serif; background-color: #f8f9fa; text-align: center; padding-top: 50px; }
-    h1 { color: #2c3e50; }
-    p { color: #555; }
-  </style>
+  <title>Holoh Förlag</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Hej världen!</h1>
-  <p>Detta är en enkel statisk webbsida publicerad på GitHub Pages.</p>
+  <header>
+    <h1>Holoh Förlag</h1>
+    <nav>
+      <a href="index.html">Hem</a>
+      <a href="om.html">Om förlaget</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Tankeväckande litteratur för nyfikna läsare</h2>
+    <p>Holoh erbjuder utvalda böcker inom psykologi, medicin och humaniora. Utforska våra titlar nedan.</p>
+  </section>
+
+  <main>
+    <div class="book-grid">
+      <div class="book">
+        <a href="den-inre-kartan.html">
+          <img src="https://picsum.photos/id/1050/400/600" alt="Den inre kartan">
+          <div class="book-overlay">
+            <h3>Den inre kartan</h3>
+            <p>En essä om medvetandets landskap och gränserna mellan vetenskap och filosofi.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="book">
+        <a href="sjal-och-synaps.html">
+          <img src="https://picsum.photos/id/1039/400/600" alt="Själ och synaps">
+          <div class="book-overlay">
+            <h3>Själ och synaps</h3>
+            <p>En neuropsykologisk betraktelse över hur våra hjärnor formar vår identitet och våra känslor.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer>© 2025 Holoh Förlag · www.holoh.se</footer>
 </body>
 </html>

@@ -1,0 +1,217 @@
+:root {
+  --bg: #f4f4f7;
+  --text: #1a1a1a;
+  --accent: #0d1b2a;
+  --highlight: #3d5a80;
+  --light-accent: #98c1d9;
+  --card-bg: #ffffff;
+  --shadow: rgba(0,0,0,0.08);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* --- Header och meny --- */
+
+header {
+  background: var(--accent);
+  color: white;
+  text-align: center;
+  padding: 1.2rem 1rem;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s;
+}
+
+nav a:hover {
+  background: var(--highlight);
+  color: white;
+}
+
+/* --- Main content --- */
+
+main {
+  flex: 1;
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* --- Intro text --- */
+
+.intro {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.intro h2 {
+  font-size: 2.2rem;
+  color: var(--accent);
+  margin-bottom: 0.8rem;
+  font-weight: 700;
+}
+
+.intro p {
+  font-size: 1.05rem;
+  color: #444;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+/* --- Bokgrid --- */
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.book {
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--shadow);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px var(--shadow);
+}
+
+.book img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.book img:hover {
+  transform: scale(1.03);
+}
+
+.book-info {
+  padding: 1rem 1.2rem 1.5rem 1.2rem;
+}
+
+.book-info h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.4rem;
+}
+
+.book-info h3 a {
+  text-decoration: none;
+  color: var(--accent);
+  transition: color 0.3s;
+}
+
+.book-info h3 a:hover {
+  color: var(--highlight);
+}
+
+.book-info p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-top: 0.3rem;
+}
+
+/* --- Bokdetaljsida och content-sidor --- */
+
+.book-detail, .content-page {
+  background: var(--card-bg);
+  padding: 2.5rem;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px var(--shadow);
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.book-detail img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 4px 16px var(--shadow);
+}
+
+.book-detail h1, .content-page h1 {
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+.book-detail .author {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+a.buy {
+  display: inline-block;
+  background: var(--highlight);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 1rem;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+a.buy:hover {
+  background: var(--light-accent);
+  color: var(--accent);
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 2rem;
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.back-link:hover {
+  color: var(--highlight);
+}
+
+/* --- Footer --- */
+
+footer {
+  background: var(--accent);
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.95rem;
+  margin-top: 3rem;
+}
